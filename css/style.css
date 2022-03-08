@@ -1,0 +1,330 @@
+/*-----------------------------------------------------------------------------------
+
+    Name: imageStore
+    Theme URI: @chendito
+    Description: Web Site - Portfolio - Chendo
+    Author: @chendito - chendo : developer and web designer
+    Author URI: http://chendo.io - https://chendito.com
+    Github: https://github.com/chendito
+    Youtube: https://youtube.com/chendito
+
+-----------------------------------------------------------------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+*::-webkit-scrollbar {
+    width: 8px;
+  }
+  *::-webkit-scrollbar-track {
+    background: #004573;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #00FFFF;
+  } 
+  @media (max-width: 768px) {
+    ::-webkit-scrollbar {display: none;}
+  }
+.main_nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+.main_nav a {
+    text-decoration: none;
+}
+@media (max-width: 991px) {
+    .main_nav a {
+        display: none;
+    }
+    
+}
+.main_nav .log_mb {
+    display: none;
+}
+@media (max-width: 991px) {
+    .main_nav .log_mb {
+        display: block;
+    }
+    
+}
+.main_nav p {
+    font-weight: 700;
+    font-size: 1.3em;
+    color: #fff;
+}
+.main_nav span {
+    color: #00FFFF;
+    user-select: none;
+    cursor: pointer;
+}
+label {
+    font-weight: 700;
+    color: #fff;
+}
+input {
+    outline: none;
+    border: none;
+    padding: .2em;
+    width: 100px;
+}
+@media (max-width: 991px) {
+    .login_sign-out {
+        background-color: #004573;
+        position: absolute;
+        right: .9em;
+        top: 4em;
+        width: 150px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: .5em ;
+        display: none;
+    }
+    .login_sign-out::before {
+        content: '';
+        position: absolute;
+        top: -.7em;
+        right: 2.3em;
+        border-width: 0 13px 13px;
+        border-style: solid;
+        border-color: transparent transparent #004573;
+        width: 0;
+        height: 0;
+    }
+    input {
+        margin: .3em;
+        width: 100%;
+        padding: .5em;
+    }
+}
+.extraButton {
+    display: none;
+}
+@media (max-width: 991px) {
+    .extraButton {
+        display: block;
+    }
+}
+.extraButton .user {
+    width: 1em;
+    cursor: pointer;
+}
+.extraButton .menu {
+    cursor: pointer;
+}
+thead {
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+}
+th {
+    text-align: center;
+    padding: 1em 2em;
+}
+tbody {
+    width: 100%;
+    height: 100%;
+}
+td {
+    text-align: center;
+    padding-left: 2.3em;
+    padding-bottom: .5em;
+    border-bottom: 1px dotted #ccc;
+}
+small {
+    font-size: 1.5em;
+    max-width: 250px;
+    font-weight: 700;
+}
+.deleteItem {
+    background-color: #004573;
+    text-decoration: none;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 0 .27em;
+    margin-right: 1em;
+}
+.car_count {
+    position: relative;
+}
+@media (max-width: 991px) {
+   .car_count {
+       position: absolute;
+       left: 50%;
+       transform: translateX(-90%);
+   }
+}
+.car_count span {
+    background-color: #00FFFF;
+    border-radius: 2px;
+    font-size: .7em;
+    padding: .19em;
+    position: absolute;
+    left: 135.9px;
+    right: auto;
+    top: .1px;
+    justify-content: center;
+    font-weight: 700;
+    color: #000;
+}
+#store_car {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #004573;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    z-index: 2;
+}
+.submenu {
+    background-color: #fff;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 3.5em 3.5em .5em 3.5em;
+    z-index: 1;
+}
+
+@media (max-width: 991px) {
+    .submenu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 2em;
+        height: 100vh;
+        display: none;
+    }
+    .open {
+        display:flex;
+    }
+}
+.submenu a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #131313;
+}
+.main_nav img {
+    width: 30px;
+    height: 30px;
+}
+#car {
+    cursor: pointer;
+    margin-left: 7.7em;
+}
+.car_list {
+    background-color: aliceblue;
+    position: absolute;
+    top: 3.12em;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    align-items: center;
+    display: none;
+    max-height: 400px;
+    min-height: 100px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+@media (max-width: 991px) {
+    .car_list {
+        max-width: 100%;
+        height: 100vh;
+    }
+    
+}
+.car_list::-webkit-scrollbar {
+    display: none;
+}
+.display {
+    display: block;
+}
+#store_list {
+    padding-top: 6em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+@media (max-width: 991px) {
+    #store_list {
+        padding-top: 3.1em;
+        width: 100%;
+        height: 100%;
+    }
+    
+}
+.card {
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}
+@media (max-width: 593px) {
+    .card {
+        width: 100%;
+        height: 100%;
+    }
+    .card img {
+        width: 100%;
+        height: 100%;
+    }
+}
+th {
+    padding-left: 3em;
+}
+@media (max-width: 991px) {
+    th{
+        padding-left: 0;
+    }
+}
+@media (max-width: 375px) {
+    th, td, table, thead, tbody {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+    
+}
+.btn {
+    width: 100%;
+    padding: .7em;
+    text-align: center;
+    background-color: #004573;
+    color: #ccc;
+    text-decoration: none;
+}
+.info_card {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+footer {
+    text-align: center;
+}
+footer a {
+    color: #004573;
+}
